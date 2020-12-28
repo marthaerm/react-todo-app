@@ -1,3 +1,10 @@
+# README
+
+This project is a simple ToDo app created following this [tutorial](https://pamit.medium.com/todo-list-building-a-react-app-with-rails-api-7a3027907665).
+It uses a ruby on rails backend, you can see the source code [here](https://github.com/marthaerm/react-todo-app).
+
+The same version of the app was done with Rails and React as a webpack, you can see the source code [here](https://github.com/marthaerm/ror-react-todo-app).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

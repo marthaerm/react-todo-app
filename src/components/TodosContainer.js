@@ -21,7 +21,7 @@ class TodosContainer extends Component {
   */
   getTodos() {
     axios
-      .get("/api/v1/todos")
+      .get("/api/v1/todos.json")
       .then((response) => {
         this.props.dispatch(loadTodos(response.data));
       })
@@ -31,7 +31,7 @@ class TodosContainer extends Component {
   createTodo = (e) => {
     if (e.key === "Enter" && !(this.getTitle.value === "")) {
       axios
-        .post("/api/v1/todos", { todo: { title: this.getTitle.value } })
+        .post("/api/v1/todos.json", { todo: { title: this.getTitle.value } })
         .then((response) => {
           this.props.dispatch(addTodo(response.data.id, response.data.title));
           this.getTitle.value = "";
@@ -42,7 +42,7 @@ class TodosContainer extends Component {
 
   updateTodo = (e, id) => {
     axios
-      .put(`/api/v1/todos/${id}`, { todo: { done: e.target.checked } })
+      .put(`/api/v1/todos/${id}.json`, { todo: { done: e.target.checked } })
       .then((response) => {
         this.props.dispatch(toggleTodo(id));
       })
@@ -51,7 +51,7 @@ class TodosContainer extends Component {
 
   deleteTodo = (id) => {
     axios
-      .delete(`/api/v1/todos/${id}`)
+      .delete(`/api/v1/todos/${id}.json`)
       .then((response) => {
         this.props.dispatch(deleteTodo(id));
       })
